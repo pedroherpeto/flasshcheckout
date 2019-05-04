@@ -1,0 +1,504 @@
+<%- include partial/head.ejs %>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
+
+<body>
+	<!-- Google Tag Manager (noscript) -->
+	<noscript>
+		<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MHFV33S" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+	</noscript>
+	<!-- End Google Tag Manager (noscript) -->
+
+	<nav class="navbar navbar-default">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="http://app.Socialrocket.com.br">
+					<img alt="Brand" class="brand" src="/images/logo_socialrocket.png">
+
+				</a>
+
+			</div>
+			<ul class="menu">
+				<li>
+					<div class="jivo-btn jivo-online-btn jivo-btn-light" onclick="jivo_api.open();" style="cursor: pointer;">
+						<div class="jivo-btn-icon" style="background-image: url(//static.jivosite.com/button/chat_light.png);"></div>Precisa
+						de ajuda?
+					</div>
+					<div class="jivo-btn jivo-offline-btn jivo-btn-light" onclick="jivo_api.open();" style="display: none;">
+						<div class="jivo-btn-icon" style="background-image: url(//static.jivosite.com/button/mail_light.png);"></div>Precisa
+						de ajuda?
+					</div>
+				</li>
+				<li><a class="menu-dash" href="https://app.Socialrocket.com.br" target="_blank">Dashboard</a></li>
+			</ul>
+		</div>
+	</nav>
+	<section class="container" id="campos">
+		<img class="pass" src="/images/passo-3.png">
+		<div class="col-md-9 col-xs-12 left">
+			<h2 style="margin-bottom: 50px">Método de pagamento</h2>
+			<form class="form2" action="">
+				<!-- <input type="radio" name="payment" id="payment" value="card" checked> -->
+				<ul class="button-payment-card">
+					<li><a id="card" value="card" class="active2">Cartão de crédito</a></li>
+					<li><a id="boleto" value="boleto">Boleto</a></li>
+				</ul>
+
+				<div>
+					<div class="card">
+						<div id="card-payment">
+
+							<ul>
+								<li>
+									<div class="flag-box_1"><img class="flag-card_1" src="/images/card-visa-logo.png"></div>
+								</li>
+								<li>
+									<div class="flag-box_2"><img class="flag-card_2" src="/images/card-mastercard-logo.png"></div>
+								</li>
+								<li>
+									<div class="flag-box_3"><img class="flag-card_3" src="/images/card-amex-logo.png"></div>
+								</li>
+								<li>
+									<div class="flag-box_4"><img class="flag-card_4" src="/images/card-diners-logo.png"></div>
+								</li>
+								<li>
+									<div class="flag-box_5"><img class="flag-card_5" src="/images/card-elo-logo.png"></div>
+								</li>
+							</ul>
+							<hr>
+							<label for="payment_company_code">Bandeira Cartão</label>
+							<div class="col-md-10 col-xs-5 align parcelamento">
+								<select name="payment_company_code" id="payment_company_code">
+									<option value="visa">Visa</option>
+									<option value="mastercard">Mastercard</option>
+									<option value="elo">Elo</option>
+									<option value="american_express">American Express</option>
+									<option value="diners_club">Diners</option>
+									<option value="hipercard">Hipercard</option>
+								</select>
+								<br>
+							</div>
+							<br>
+
+							<label for="name">Número do cartão</label>
+							<br>
+							<input type="text" id="card-number" name="cardnumber" maxlength="19" placeholder="0000.0000.0000.0000">
+							<br>
+							<label for="email">Nome Impresso no cartão</label>
+							<br>
+							<input type="text" id="card-name" name="cardname" placeholder="Digite o nome exatamente igual ao cartão">
+							<br>
+							<label for="name">Vencimento</label>
+							<br>
+							<div class="col-md-2 col-xs-4 align">
+
+								<select name="month" id="month">
+
+									<option value="01">01</option>
+									<option value="02">02</option>
+									<option value="03">03</option>
+									<option value="04">04</option>
+									<option value="05">05</option>
+									<option value="06">06</option>
+									<option value="07">07</option>
+									<option value="08">08</option>
+									<option value="09">09</option>
+									<option value="10">10</option>
+									<option value="11">11</option>
+									<option value="12">12</option>
+								</select>
+								<br>
+							</div>
+							<div class="col-md-10 col-xs-5 align">
+								<select name="year" id="year">
+									<option value="2018">2018</option>
+									<option value="2019">2019</option>
+									<option value="2020">2020</option>
+									<option value="2021">2021</option>
+									<option value="2022">2022</option>
+									<option value="2023">2023</option>
+									<option value="2024">2024</option>
+									<option value="2025">2025</option>
+									<option value="2026">2026</option>
+									<option value="2027">2027</option>
+									<option value="2028">2028</option>
+								</select>
+								<br>
+							</div>
+
+							<div class="parcelamento" style="display: none">
+								<label for="name">Parcelamento</label>
+								<div class="select">
+
+								</div>
+							</div>
+							<label for="name">Cód. Segurança</label>
+							<br>
+							<input type="text" id="cvv" name="cvv" placeholder="xxx">
+							<br>
+
+							<p class="card-payment">A assinatura é recorrente, a cobrança será realizada automaticamente.</p>
+							<p class="card-payment"><i class='fa fa-lock '></i> Você está em um ambiente seguro com informações
+								criptografadas.</p>
+						</div>
+
+						<!-- <button type="button" class="cta-2 step-3" id="load">Efetuar Pagamento</button>  -->
+						<button type="button" class="cta-2 efetuarPag" id="efetuarPag" data-target="#myModal">Efetuar Pagamento</button>
+						<button type="button" class="cta-2 loading-btn" id="loading" style="display: none;"><i class='fa fa-spinner fa-spin '></i>
+							Efetuando Pagamento...</button>
+
+
+						<script>
+							function termscheck() {
+								if (document.getElementById("termscheck").checked) {
+									document.getElementById("termsconfirm").disabled = false
+								} else {
+									document.getElementById("termsconfirm").disabled = true
+								}
+							};
+						</script>
+						<!-- Modal -->
+						<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+							<div class="modal-dialog" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+										<h4 class="modal-title" id="myModalLabel" style="top:10px; margin: 0 auto">Termos de Uso</h4>
+									</div>
+									<div class="modal-body" style="height:300px; overflow:scroll; overflow-x:hidden;">
+										TERMOS DE USO DA SOCIALROCKET<br>
+										<br>
+										Última Atualização: 28 de fevereiro de 2019<br>
+										<br>
+										Bem vindo(a)! Obrigado por utilizar a Socialrocket!<br><br>
+
+										Esta aplicação e seu conteúdo ("Socialrocket") são controlados e operados pela própria Socialrocket. Todos os
+										direitos reservados.<br><br>
+
+										Estes termos de uso têm por objeto definir as regras a serem seguidas para a utilização da Socialrocket
+										("Termos de Uso"), sem prejuízo da aplicação da legislação vigente.<br><br>
+
+										AO UTILIZAR A SOCIALROCKET, VOCÊ AUTOMATICAMENTE CONCORDA COM ESTES TERMOS DE USO, RESPONSABILIZANDO-SE
+										INTEGRALMENTE POR TODOS E QUAISQUER ATOS PRATICADOS POR VOCÊ NA SOCIALROCKET OU EM SERVIÇOS A ELA
+										RELACIONADOS. CASO VOCÊ NÃO CONCORDE COM QUALQUER DOS TERMOS E CONDIÇÕES ABAIXO ESTABELECIDOS, VOCÊ NÃO DEVE
+										UTILIZAR A SOCIALROCKET. VOCÊ TAMBÉM CONCORDA COM OS TERMOS DESCRITOS EM NOSSA POLÍTICA DE PRIVACIDADE. PARA
+										ACESSÁ-LA, CLIQUE AQUI suporte@socialrocket.com.br<br><br>
+
+										Caso queira nos dar algum feedback sobre a Socialrocket, tenha dúvidas ou precise tratar de qualquer assunto
+										relacionado a estes Termos de Uso, entre em contato conosco através do e-mail suporte@socialrocket.com.br.<br><br>
+
+										1. O QUE É A SOCIALROCKET?<br><br>
+
+										1.1. Serviços. a Socialrocket é uma plataforma que oferece os seguintes serviços: O Socialrocket é uma
+										Plataforma utilizada para perfil do Usuário no Instagram, que tem como objetivo ajudá-lo a obter mais
+										resultados em seu negócio na rede social, por meio da programação de ações, anteriormente realizadas
+										manualmente, como, agendamento de postagens, segmentação de público-alvo, ações de interação (seguir, curtir
+										e deixar de seguir), envio de
+										mensagem direta automática para os seguidores e exibição de dados de performance para análise da conta
+										proporcionando a possibilidade de melhorar os resultados no Instagram.<br><br>
+
+										1.2. Ressalvas. Ao utilizar A Socialrocket, você reconhece que a Socialrocket não é afiliada ou patrocinada
+										pelo Instagram, Facebook ou qualquer parceiro de terceiros do Instagram de qualquer forma. A Socialrocket
+										opera completamente separado do Instagram. Ao utilizar a Socialroket nós não nos responsabilizamos por
+										possíveis bloqueios e proibições em sua conta. Como resultado do uso de nosso serviço, o cliente concorda que
+										as possíveis exclusões de contas são por conta e risco do cliente e de forma alguma será responsabilidade da
+										Socialrocket ou qualquer de suas partes afiliadas.<br><br>
+
+										1.3. Suspensão. Nós nos reservamos o direito de suspender ou cancelar, a qualquer momento, o seu acesso à
+										aplicação em caso de suspeita de fraude, obtenção de benefício ou vantagem de forma ilícita, ou pelo não
+										cumprimento de quaisquer condições previstas nestes Termos de Uso, na Política de Privacidade ou na
+										legislação aplicável. Nesses casos, não será devida qualquer indenização a você, e a Socialrocket poderá
+										promover a competente ação de regresso, se necessário, bem como tomar quaisquer outras medidas necessárias
+										para perseguir e resguardar seus interesses.<br><br>
+
+										2. COMO ACESSO A SOCIALROCKET?<br><br>
+
+										2.1. Acesso. Para acessar a Socialrocket e utilizar suas funcionalidades é necessário efetuar um cadastro.
+										Para cadastrar-se, você nos fornecerá informações pessoais, conforme descrito em nossa Política de
+										Privacidade. Para saber mais sobre a privacidade de suas informações pessoais na Socialrocket, acesse nossa
+										Política de Privacidade.<br><br>
+
+										2.2. Idade de Utilização. Para utilizar a Socialrocket, você deve ter pelo menos 18 (dezoito) anos.<br><br>
+
+										2.3. Titularidade. A partir do cadastro, você será titular de uma conta que somente poderá ser acessada por
+										você. Caso a Socialrocket detecte alguma conta feita a partir de informações falsas, por usuários que, por
+										exemplo, não possuem a idade mínima permitida, essa conta será automaticamente deletada.<br><br>
+
+										2.4. Atualização das Informações. Desde já, você se compromete a manter as suas informações pessoais
+										atualizadas. Você também concorda que irá manter o seu login e senha seguros e fora do alcance de terceiros,
+										e não permitirá que a sua conta na Socialrocket seja usada por outras pessoas. Dessa forma, o usuário
+										responsabiliza-se por todas as ações realizadas em sua conta.<br><br>
+
+										2.5. Conexão via Terceiros. Alternativamente, a Socialrocket poderá te oferecer a possibilidade de realizar
+										seu cadastro por meio de sua conta de serviços de terceiros como Instagram, mas não apenas estes. Nessa
+										hipótese, você autoriza a Socialrocket a acessar, armazenar e utilizar as informações fornecidas por
+										terceiros a fim de criar a sua conta na Socialrocket. a Socialrocket reafirma que NÃO tem qualquer ligação
+										com esses terceiros, não possuindo qualquer responsabilidade, tampouco garantindo, em qualquer hipótese, os
+										produtos ou serviços fornecidos por eles.<br><br>
+
+										3. ASSINATURA E CANCELAMENTO DE PLANOS<br><br>
+
+										3.1. Assinatura. Nós da Socialrocket fornecemos a assinatura de planos de serviço da seguinte maneira:
+										onerosa, como definido no capítulo abaixo.<br><br>
+
+										3.2. Modo de Subscrição. A subscrição ao(s) plano(s) pago(s) requer o pagamento antecipado para a subscrição
+										ao plano. Dessa forma, você estará pagando hoje pelo acesso durante o próximo mês corrente. Caso o dia em que
+										o pagamento é efetuado não se repita todos os meses (por exemplo: 31), o pagamento será cobrado no dia útil
+										anterior ao que eventualmente ocorreria caso essa data existisse no mês em questão (por exemplo: 28 ou 30).
+										Haverá renovação automática do plano, a não ser que você manifeste-se contrariamente requerendo o
+										cancelamento, antes da data de faturamento.<br><br>
+
+										3.2.1. Solicitações de cancelamento após a data de faturamento não serão emitidos estornos.<br><br>
+
+										3.3. Cancelamento da Subscrição. O cancelamento da subscrição ao plano pode ser realizado a qualquer tempo
+										pelo usuário e será entendido como manifestação expressa de que não pretende renovar a licença no próximo
+										período ainda não contabilizado para fins de cobrança. O cancelamento não enseja qualquer dever a
+										Socialrocket de realizar a devolução do pagamento do mês no qual o usuário optou por não renovar a relação
+										contratual.<br><br>
+
+										3.4. Trânsito entre Planos. Nós da Socialrocket sabemos que cada um dos planos é mais adequado para
+										solucionar determinados problemas do usuário. Pensando nisso, oferecemos a possibilidade de você transitar
+										entre os planos (sujeito às mudanças de disponibilidade de recursos oferecidas por cada um), editando ou
+										fazendo upgrade/downgrade de sua subscrição. É importante ressaltar que o usuário que deseja cancelar ou sair
+										das Versões Pagas não perderá sua conta nem o conteúdo gerado, ele apenas virará um usuário do plano
+										gratuito, perdendo acesso às features oferecidas anteriormente.<br><br>
+
+										3.5. In-App Purchases. A aplicação possui funcionalidades que podem ser compradas dentro da plataforma, as
+										chamadas “In-App Purchases”. As eventuais compras desses serviços ocorrerão de maneira semelhante ao disposto
+										acima.<br><br>
+
+										3.6. Para realizar o cancelamento da assinatura recorrente é necessário que seja encaminhado um e-mail para
+										suporte@socialrocket.com.br. Não será aceito solicitações de cancelamento de assinatura por chat online,
+										whatsapp e por telefone.<br><br>
+
+										4. COMO SÃO FEITOS OS PAGAMENTOS NA SOCIALROCKET?<br><br>
+
+										4.1. Meio de Pagamento. Os pagamentos efetuados na Socialrocket deverão ser realizados dentro da aplicação,
+										por meio de cartão de crédito ou boleto bancário.<br><br>
+
+										4.2. Preço Final. O preço pago por você é final e não reembolsável, a menos que diversamente determinado pela
+										Socialrocket. a Socialrocket reserva-se o direito de estabelecer, remover e/ou revisar o preço relativo a
+										todos os serviços ou bens obtidos por meio do uso da aplicação a qualquer momento. Nunca alteraremos o valor
+										da sua subscrição sem antes avisá-lo.<br><br>
+
+										4.3. Recolhimento de Impostos. Se houver a incidência de qualquer imposto, o usuário será responsável por seu
+										recolhimento. Em caso de eventual recolhimento por parte da aplicação, a mesma explicita que repassará ao
+										usuário no preço.<br><br>
+
+										4.4. Confirmação. A confirmação do pagamento por meio da aplicação ocorrerá em até 5 (cinco) dias úteis. O
+										processamento das informações de pagamento e a confirmação do pagamento serão realizados por sistemas de
+										terceiros (ex. instituição financeira ou administradora do cartão de crédito), sendo o aplicativo uma mera
+										interface entre o cliente e esses sistemas.<br><br>
+
+										4.5. Prazo mínimo. Certos produtos ou promoções da Socialrocket podem exigir um prazo mínimo de assinatura. É
+										importante que o usuário esteja ciente de que, caso decida não utilizar mais tais produtos antes do prazo
+										mínimo de assinatura, podem ser cobradas tarifas adicionais.<br><br>
+
+										4.6. Código Promocional. Caso a Socialrocket crie algum código promocional (por exemplo, cupom de desconto),
+										este deve ser usado de forma legal para a finalidade e o público ou usuário específico a que se destina,
+										seguindo todas suas condições. O código promocional pode ser cancelado caso se verifique que foi transferido,
+										vendido ou utilizado com erro, fraude, ilegalidade ou violação às condições do respectivo código.<br><br>
+
+										5. QUAIS SÃO OS DIREITOS DA SOCIALROCKET SOBRE A APLICAÇÃO?<br><br>
+
+										5.1. Nossos Direitos. Todos os direitos relativos à Socialrocket e suas funcionalidades são de propriedade
+										exclusiva da Socialrocket, inclusive no que diz respeito aos seus textos, imagens, layouts, software,
+										códigos, bases de dados, gráficos, artigos, fotografias e demais conteúdos produzidos direta ou indiretamente
+										pela Socialrocket (“Conteúdo da Socialrocket”). O Conteúdo da Socialrocket é protegido pela lei de direitos
+										autorais e de propriedade intelectual. É proibido usar, copiar, reproduzir, modificar, traduzir, publicar,
+										transmitir, distribuir, executar, fazer o upload, exibir, licenciar, vender ou explorar e fazer engenharia
+										reversa do Conteúdo da Socialrocket, para qualquer finalidade, sem o consentimento prévio e expresso da
+										Socialrocket. Qualquer uso não autorizado do Conteúdo da Socialrocket será considerado como violação dos
+										direitos autorais e de propriedade intelectual da Socialrocket.<br><br>
+
+										6. PROPRIEDADE INTELECTUAL SOBRE O SOFTWARE E OS MATERIAIS DISPONIBILIZADOS<br><br>
+
+										6.1. Propriedade Intelectual. Para nós da Socialrocket, a qualidade dos materiais disponibilizados ao usuário
+										é de suma importância. A criação deles é fruto de muito trabalho e dedicação de nossos desenvolvedores. Por
+										isso, reafirmamos que a Socialrocket garante que todos os direitos, título e interesse (incluindo, mas não
+										apenas, os direitos autorais, marcários e outros de propriedade intelectual) sobre o serviço disponibilizado
+										por nós permanecerão sob a titularidade da Socialrocket.<br><br>
+
+										6.2. Não-aquisição de Direitos. O usuário não adquirirá nenhum direito de propriedade sobre os serviços e
+										conteúdos da Socialrocket, exceto quando haja outorga expressa neste Termos de Uso.<br><br>
+
+										6.3. Download de Conteúdo. É proibido que o usuário faça o download de nosso conteúdo com o intuito de
+										armazená-lo em banco de dados para oferecer para terceiro que não seja o próprio usuário. Veda-se, também,
+										que o conteúdo disponibilizado por nós seja usado para criar uma base de dados ou um serviço que possa
+										concorrer de qualquer maneira com o nosso negócio.<br><br>
+
+										7. RECLAMAÇÕES SOBRE VIOLAÇÃO DE DIREITO AUTORAL<br><br>
+
+										7.1. Infringência de Direitos. Alegações de infringência de direito autoral de qualquer conteúdo disponível
+										na Socialrocket devem ser encaminhadas por meio do e-mail suporte@socialrocket.com.br.<br><br>
+
+										8. RESPONSABILIDADES DO USUÁRIO E DA SOCIALROCKET<br><br>
+
+										8.1. Responsabilidade pelo Uso. Você é exclusivamente responsável pelo uso da Socialrocket e deverá respeitar
+										as regras destes Termos de Uso, bem como a legislação aplicável à Socialrocket.<br><br>
+
+										8.2. Responsabilização por Eventuais Danos. a Socialrocket, seu controlador, suas afiliadas, parceiras ou
+										funcionários não serão, em hipótese alguma, responsabilizados por danos diretos ou indiretos que resultem de,
+										ou que tenham relação com o acesso, uso ou a incapacidade de acessar ou utilizar a Socialrocket.<br><br>
+
+										8.3. Não-Responsabilização. TENDO EM VISTA AS CARACTERÍSTICAS INERENTES AO AMBIENTE DA INTERNET, A
+										SOCIALROCKET NÃO SE RESPONSABILIZA POR INTERRUPÇÕES OU SUSPENSÕES DE CONEXÃO, TRANSMISSÕES DE COMPUTADOR
+										INCOMPLETAS OU QUE FALHEM, BEM COMO POR FALHA TÉCNICA DE QUALQUER TIPO, INCLUINDO, MAS NÃO SE LIMITANDO, AO
+										MAU FUNCIONAMENTO ELETRÔNICO DE QUALQUER REDE, HARDWARE OU SOFTWARE. A INDISPONIBILIDADE DE ACESSO À INTERNET
+										OU À SOCIALROCKET, ASSIM COMO QUALQUER INFORMAÇÃO INCORRETA OU INCOMPLETA SOBRE A SOCIALROCKET E QUALQUER
+										FALHA HUMANA, TÉCNICA OU DE QUALQUER OUTRO TIPO NO PROCESSAMENTO DAS INFORMAÇÕES DA SOCIALROCKET NÃO SERÃO
+										CONSIDERADAS RESPONSABILIDADE DA SOCIALROCKET. A SOCIALROCKET SE EXIME DE QUALQUER RESPONSABILIDADE
+										PROVENIENTE DE TAIS FATOS E/OU ATOS.<br><br>
+
+										8.4. Perda de Lucros. Quando permitido por lei, a Socialrocket e os fornecedores ou distribuidores não serão
+										responsáveis por perda de lucros, perda de receita, perda de dados, perdas financeiras ou por danos
+										indiretos, especiais, consequenciais, exemplares ou punitivos.<br><br>
+
+										8.5. Manutenção. É de sua inteira responsabilidade manter o ambiente de seu dispositivo (computador, celular,
+										tablet, entre outros) seguro, com o uso de ferramentas disponíveis, como antivírus, firewall, entre outras,
+										de modo a contribuir na prevenção de riscos eletrônicos.<br><br>
+
+										8.6. Links Externos. É possível que a Socialrocket possa conter links para sites e aplicativos de terceiros,
+										assim como ter tecnologias integradas. Isso não implica, de maneira alguma, que a Socialrocket endossa,
+										verifica, garante ou possui qualquer ligação com os proprietários desses sites ou aplicativos, não sendo
+										responsável pelo seu conteúdo, precisão, políticas, práticas ou opiniões. A Socialrocket recomenda que você
+										leia os termos de uso e políticas de privacidade de cada site de terceiros ou serviço que o usuário vier a
+										visitar ou utilizar.<br><br>
+
+										9. COMO A SOCIALROCKET LIDA COM O CONTEÚDO QUE VOCÊ E OUTROS USUÁRIOS PRODUZEM?<br><br>
+
+										9.1. Criação de Conteúdo. a Socialrocket poderá, a seu exclusivo critério, permitir que você ou qualquer
+										outro usuário apresente, carregue, publique ou disponibilize, na aplicação, conteúdo ou informações de texto,
+										imagem, áudio ou vídeo (“Conteúdo de Usuário”).<br><br>
+
+										9.2. Conteúdos Proibidos. É proibido qualquer Conteúdo de Usuário de caráter difamatório, calunioso,
+										injurioso, violento, pornográfico, obsceno, ofensivo ou ilícito, conforme apuração da Socialrocket a seu
+										critério exclusivo, inclusive informações de propriedade exclusiva pertencentes a outras pessoas ou empresas
+										(ex. direito de autor, marcas), sem a expressa autorização do titular desses direitos, cuja violação não será
+										de responsabilidade da Socialrocket.<br><br>
+
+										9.3. Titularidade do Conteúdo. Qualquer Conteúdo de Usuário fornecido por você permanece de sua propriedade.
+										Contudo, ao fornecê-lo para a Socialrocket, você nos outorga uma licença em nível mundial, por prazo
+										indeterminado, gratuita e transferível, e com direito a sublicenciar, usar, copiar, modificar, criar obras
+										derivadas, distribuir, publicar, exibir esse Conteúdo de Usuário em todos os formatos e canais de
+										distribuição possíveis, sem necessidade de novo aviso a você, e sem necessidade de qualquer pagamento, desde
+										que isso esteja relacionado ao funcionamento da plataforma. Ademais, os dados fornecidos pelos usuários são
+										protegidos por criptografia, o que significa que nós seremos “cegos” com relação a esse Conteúdo.<br><br>
+
+										9.4. Exclusão do Conteúdo. A Socialrocket poderá, mas não se obriga a, analisar, monitorar e remover Conteúdo
+										de Usuário, a critério exclusivo da Socialrocket, a qualquer momento e por qualquer motivo, sem nenhum aviso
+										a você.<br><br>
+
+										10. O QUE MAIS EU PRECISO SABER SOBRE ESTES TERMOS DE USO?<br><br>
+
+										10.1. Alterações. Para melhorar sua experiência, a Socialrocket está sempre sendo atualizada. Por esse
+										motivo, estes Termos de Uso podem ser alterados, a qualquer tempo, a fim de refletir os ajustes realizados.
+										No entanto, sempre que ocorrer qualquer modificação, você será previamente informando pelo endereço de e-mail
+										fornecido por você no momento do cadastro ou por um aviso em destaque na aplicação. Caso você não concorde
+										com os novos Termos de Uso, você poderá rejeitá-los, mas, infelizmente, isso significa que você não poderá
+										mais ter acesso e fazer uso da Socialrocket. Se de qualquer maneira você utilizar a Socialrocket mesmo após a
+										alteração destes Termos de Uso, isso significa que você concorda com todas as modificações.<br><br>
+
+										10.2. Conflito entre Disposições. Em caso de conflito entre estes termos e os termos modificador, os termos
+										posteriores prevalecerão com relação a esse conflito.<br><br>
+
+										10.3. Lei e Foro. Estes Termos de Uso são regidos pelas leis da República Federativa do Brasil. Quaisquer
+										dúvidas e situações não previstas nestes Termos de Uso serão primeiramente resolvidas pela Socialrocket e,
+										caso persistam, deverão ser solucionadas pelo Foro da Comarca de Rio de Janeiro, Rio de Janeiro, com exclusão
+										de qualquer outro, por mais privilegiado que seja ou venha a ser.<br><br>
+
+										10.4. Dúvidas. Caso você tenha alguma dúvida, comentário ou sugestão, por favor, entre em contato conosco por
+										meio do e-mail suporte@socialrocket.com.br.<br><br>
+
+									</div>
+									<div class="modal-footer">
+										<div class="text-left" style="">
+											<input type="checkbox" name="terms" id="termscheck" onclick='function termscheck() {
+												if (document.getElementById("termscheck").checked) {
+													document.getElementById("termsconfirm").disabled = false
+												} else {
+													document.getElementById("termsconfirm").disabled = true
+												}
+											}; termscheck();'><label
+											 style="font-size:15px; margin-top: -5px; margin-bottom: 15px">
+												Eu aceito os Termos de Uso</label>
+										</div>
+										<button type="button" class="btn btn-success step-3" id="termsconfirm" disabled style="width:100%; padding: 12px; font-size: 17px;">Confirmar
+											pagamento</button>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<a href="javascript:void(0)" class="return-mobile return-page">
+						<- retornar</a> <a href="javascript:void(0)" class="return return-page">
+							<- retornar</a> </div> </form> <div>
+
+
+				</div>
+		</div>
+		<div class="col-md-3 col-xs-12">
+			<h2 class="space-left">Plano escolhido</h2>
+
+			<div class="plan-selected">
+				<p class="plan_extra"></p>
+				<hr>
+
+				<p class="final-price">Total:
+					<span id="selected-price"></span>
+				</p>
+
+				<span class="">
+					<input class="cupom" style="width: 82%;height: 32px;padding: 10px;border-radius: 5px;border: 2px solid #d1d1d1;font-size: 16px;cursor: pointer;outline: none"
+					 type="text" name="cupom" placeholder="Digite seu cupom">
+					<span><button class="cupom-button">Ativar</button></span>
+					<!-- <span class="discount"></span> -->
+				</span>
+			</div>
+		</div>
+	</section>
+
+
+	<p class="copyright footer-p">CNPJ: 09.278.785./0001-33</p>
+	<p class="text-center footer-p">Termos de uso:<a href="http://www.socialrocket.com.br/termos-de-uso"> Acesse</a></p>
+	<p class="text-center footer-p">E-mail:suporte@socialrocket.com.br</p>
+	<p class="text-center footer-p">© Socialrocket 2015. Todos os direitos reservados</p>
+
+	<script src="/scripts/libs/jquery-3.3.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<script src="/scripts/libs/jquery.validate.js"></script>
+	<script src="/scripts/libs/jquery.mask.js"></script>
+	<script src="/scripts/libs/bootstrap-notify.min.js"></script>
+
+	<script src="/scripts/payment.js"></script>
+
+	<%- include partial/konduto.ejs %>
+	<!-- BEGIN JIVOSITE CODE {literal} -->
+	<script type='text/javascript'>
+		(function () { var widget_id = '9o4MBOfx0X'; var d = document; var w = window; function l() { var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//code.jivosite.com/script/widget/' + widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss); } if (d.readyState == 'complete') { l(); } else { if (w.attachEvent) { w.attachEvent('onload', l); } else { w.addEventListener('load', l, false); } } })();
+	</script>
+	<!-- {/literal} END JIVOSITE CODE -->
+
+	<script>
+		var page_category = 'payment';
+		(function () {
+			var period = 300;
+			var limit = 20 * 1e3;
+			var nTry = 0;
+			var intervalID = setInterval(function () {
+				var clear = limit / period <= ++nTry;
+				if ((typeof (Konduto) !== "undefined") &&
+					(typeof (Konduto.sendEvent) !== "undefined")) {
+					Konduto.sendEvent('page', page_category); // Disparo programático de evento             
+					clear = true;
+				}
+				if (clear) {
+					clearInterval(intervalID);
+				}
+			},
+				period);
+		})(page_category);
+	</script>
+</body>
+
+</html>

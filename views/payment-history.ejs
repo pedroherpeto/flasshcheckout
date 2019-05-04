@@ -1,0 +1,57 @@
+<%- include partial/head.ejs %>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
+
+<body>
+
+	<!-- Google Tag Manager (noscript) -->
+	<noscript>
+		<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MHFV33S" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+	</noscript>
+	<!-- End Google Tag Manager (noscript) -->
+
+		<div class="container">
+			<h3 class="text-center">
+				Detalhe da sua assinatura
+			</h3>
+			<br>
+	<table class="table table-striped">
+		<thead>
+		  <tr>
+			<th scope="col">Plano</th>
+			<th scope="col">Data de início</th>
+			<th class="col">Fim da Cobrança</th>
+			<th scope="col">Status</th>
+			<th scope="col">Método de pagamento</th>
+			<th scope="col">Valor</th>
+			<th scope="col">Parcela</th>
+		  </tr>
+		</thead>
+		<tbody>
+
+			<% subscriptions.forEach(function(subscription) { %>
+					
+				<tr>
+					<td><%= subscriptions[0].plan.name %> </td>
+					<td><%= moment(subscription.current_period.billing_at).format('DD/MM/YYYY HH:mm') %></td>
+					<td><%= moment(subscription.current_period.end_at).format('DD/MM/YYYY HH:mm') %></td>
+					<td><%= subscription.status %> </td>
+					<td><%= subscription.payment_method.public_name %></td>
+					<td>R$ <%= subscription.totalAmount %>,00</td>
+					<td><%= subscription.installments %></td>
+				</tr>
+			<% }); %>
+
+		</tbody>
+	  </table>
+
+		<p class="container copyright container">© Socialrocket 2015. Todos os direitos reservados</p>
+	</div>
+
+	<script src="/scripts/libs/jquery-3.3.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<script src="/scripts/libs/jquery.validate.js"></script>
+	<script src="/scripts/libs/jquery.mask.js"></script>
+	<script src="/scripts/libs/bootstrap-notify.min.js"></script>
+
+</body>
+</html>

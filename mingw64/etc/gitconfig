@@ -1,0 +1,5 @@
+[http]
+	sslBackend = openssl
+	sslCAInfo = C:/Users/Pedro/Desktop/checkout-RedirectPayment/checkout-RedirectPayment/mingw64/ssl/certs/ca-bundle.crt
+[credential]
+	helper = manager

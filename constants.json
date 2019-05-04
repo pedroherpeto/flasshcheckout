@@ -1,0 +1,6 @@
+{
+    "VINDI_API_KEY": "z-8-BnY7ZWxHAw3QXkOAQOfHW7E2V8ohAX2_lRr5ip8",
+    "SOCIALROCKET_API_KEY": "adkjc46fbjva73bvake7529ccshjf36",
+    "MONGODB_URI": "mongodb://guru:Rocket123@ds225038.mlab.com:25038/heroku_n3dl768c",
+    "CLOUDAMQP_URL": "amqp://utvfntkx:wj1v8KKpH4ZGdHZcMxaVCQWJZDN66ayn@spider.rmq.cloudamqp.com/utvfntkx"
+}
